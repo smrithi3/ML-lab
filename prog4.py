@@ -1,3 +1,4 @@
+#Demonstrate the working of SVM Classifier for suitable dataset
 from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC

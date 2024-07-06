@@ -1,3 +1,5 @@
+#Demonstrate text classification using Naive Bayes Classifier
+
 # Importing necessary libraries
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB

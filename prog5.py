@@ -1,3 +1,4 @@
+#Implement and demonstrate the working of decision tree algorithm.
 from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier

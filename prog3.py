@@ -1,3 +1,4 @@
+#Demonstarte the data cleaning, integration and transformation using pandas library in python
 import pandas as pd
 
 customers_data = {

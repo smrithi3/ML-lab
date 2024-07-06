@@ -1,3 +1,4 @@
+#Implement and demonstrate the Candidate-Elimination algorithm to output a description of the set of all hypotheses consistent with an initial set of training examples. Read the training examples from a .CSV file.
 import numpy as np
 import pandas as pd
 # Loading Data from a CSV File
