@@ -1,35 +1,29 @@
 #Implement and demonstrate the FIND-S algorithm for finding the most specific hypothesis based on a given set of training data samples. Read the training data from a .CSV file.
-import pandas as pd
-import numpy as np
- 
-#to read the data in the csv file
-data = pd.read_csv("C:\\Users\\SMRITHI\\OneDrive\\Documents\\ML lab\\ds.csv")
-print(data,"n")
+import csv
 
-#making an array of all the attributes
-d = np.array(data)[:,:-1]
-print("n The attributes are: ",d)
- 
-#segragating the target that has positive and negative examples
-target = np.array(data)[:,-1]
-print("n The target is: ",target)
- 
-#training function to implement find-s algorithm
-def train(c,t):
-    for i, val in enumerate(t):
-        if val == "Yes":
-            specific_hypothesis = c[i].copy()
-            break
-             
-    for i, val in enumerate(c):
-        if t[i] == "Yes":
-            for x in range(len(specific_hypothesis)):
-                if val[x] != specific_hypothesis[x]:
-                    specific_hypothesis[x] = '?'
+# Load data from CSV file
+training_data = []
+step=0
+with open('ENJOYSPORT.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        training_data.append(row)
+
+# Initialize hypothesis with '?'
+hypothesis = ['0'] * (len(training_data[0]) - 1)
+
+# Apply Find-S algorithm
+for example in training_data:
+    if example[-1] == '1':
+        for i in range(len(hypothesis)):
+            if hypothesis[i] != example[i]:
+                if hypothesis[i] == '0':
+                    hypothesis[i] = example[i]
                 else:
-                    pass
-                 
-    return specific_hypothesis
- 
-#obtaining the final hypothesis
-print("n The final hypothesis is:",train(d,target))
+                    hypothesis[i] = '?'
+    print('STEP',step,': ')
+    print("Specific hypothesis:", hypothesis)
+    step+=1
+    print('\n')
+
+print("Final hypothesis:", hypothesis)
