@@ -1,6 +1,5 @@
 #Implement and demonstrate the FIND-S algorithm for finding the most specific hypothesis based on a given set of training data samples. Read the training data from a .CSV file.
 import csv
-
 # Load data from CSV file
 training_data = []
 step=0
@@ -25,5 +24,5 @@ for example in training_data:
     print("Specific hypothesis:", hypothesis)
     step+=1
     print('\n')
-
+    
 print("Final hypothesis:", hypothesis)
